@@ -18,8 +18,8 @@ string getID(const string guid);
 
 int main()
 {
-    string sourcePath = "./";
-    string destinationPath = "./";
+    const string sourcePath = "./";
+    const string destinationPath = "./";
     for (const auto& source : fs::directory_iterator(sourcePath))
     {
         const string fileExt = source.path().extension().string();
@@ -51,7 +51,7 @@ int main()
                 }
                 sourceFile.close();
                 if (isChanged) {
-                    string newFileName = destinationPath + source.path().filename().string();
+                    const string newFileName = destinationPath + source.path().filename().string();
                     if (!newFileName.compare(sourceFileName)) {
                         remove(sourceFileName.c_str());
                     }
