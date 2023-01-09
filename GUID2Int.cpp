@@ -30,6 +30,7 @@ int main()
             ifstream sourceFile(sourceFileName);
             if (sourceFile.is_open())
             {
+                cout << sourceFileName << endl;
                 const string tmpFileName = destinationPath + source.path().filename().generic_string() + ".tmp";
                 ofstream tmpFile(tmpFileName);
                 if (tmpFile.is_open()) {
