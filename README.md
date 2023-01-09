@@ -13,3 +13,7 @@ Put GUID2Int.exe file in a folder with *.csv files and launch GUID2Int.exe.
 
 Built with Mingw-w64, C++17.
 
+## Source files
+
+[GitHub](https://github.com/sergey-untilov/GUID2Int)
+
