@@ -22,7 +22,7 @@ int main()
     string destinationPath = "./";
     for (const auto& source : fs::directory_iterator(sourcePath))
     {
-        const string fileExt = source.path().extension().generic_string();
+        const string fileExt = source.path().extension().string();
         if (!fileExt.compare(FILE_EXT))
         {
             bool isChanged = false;
@@ -31,7 +31,7 @@ int main()
             if (sourceFile.is_open())
             {
                 cout << sourceFileName << endl;
-                const string tmpFileName = destinationPath + source.path().filename().generic_string() + ".tmp";
+                const string tmpFileName = destinationPath + source.path().filename().string() + ".tmp";
                 ofstream tmpFile(tmpFileName);
                 if (tmpFile.is_open()) {
                     string line;
@@ -51,7 +51,7 @@ int main()
                 }
                 sourceFile.close();
                 if (isChanged) {
-                    string newFileName = destinationPath + source.path().filename().generic_string();
+                    string newFileName = destinationPath + source.path().filename().string();
                     if (!newFileName.compare(sourceFileName)) {
                         remove(sourceFileName.c_str());
                     }
